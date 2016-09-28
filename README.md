@@ -25,8 +25,8 @@ This file handles the requests coming from the view file (index.php) and returns
 This is the main view file which is visible to the user. In this single page, the user can do all the CRUD operations. For better understanding we’ve divided this script into two parts.
 
 **getUsers()** function is used to get the users data from the userAction.php file using ajax and render the received HTML in the user data list:
-
-`function getUsers(){
+~~~
+function getUsers(){
     $.ajax({
         type: 'POST',
         url: 'userAction.php',
@@ -36,10 +36,12 @@ This is the main view file which is visible to the user. In this single page, th
         }
     });
 }`
+~~~
 
 **userAction()** function is used to send add, edit, and delete request to the userAction.php file using ajax and give the response to the user:
 
-`function userAction(type,id){
+~~~
+function userAction(type,id){
     id = (typeof id == "undefined")?'':id;
     var statusArr = {add:"added",edit:"updated",delete:"deleted"};
     var userData = '';
@@ -65,11 +67,13 @@ This is the main view file which is visible to the user. In this single page, th
             }
         }
     });
-}`
+}
+~~~
 
 **editUser()** function is used to get the particular user data from the userAction.php file and set the respective value in the edit form fields.
 
-`function editUser(id){
+~~~
+function editUser(id){
     $.ajax({
         type: 'POST',
         dataType:'JSON',
@@ -83,7 +87,8 @@ This is the main view file which is visible to the user. In this single page, th
             $('#editForm').slideDown();
         }
     });
-}`
+}
+~~~
 
 **HTML:**
 Initially already inserted users data is fetched from the users table and listed with edit & delete links. At the top of the user list, add link would be displayed. The add and edit form HTMl would be visible if add or edit link is clicked.
