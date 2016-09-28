@@ -4,9 +4,9 @@
  * This class is used for database related (connect, insert, update, and delete) operations
  */
 class DB{
-    private $dbHost     = "172.17.0.2";
-    private $dbUsername = "root";
-    private $dbPassword = "101281";
+    private $dbHost     = "x.x.x.x";
+    private $dbUsername = "yyyyyyy";
+    private $dbPassword = "zzzzzzz";
     private $dbName     = "phptutorialmysqli";
 
     public function __construct(){
